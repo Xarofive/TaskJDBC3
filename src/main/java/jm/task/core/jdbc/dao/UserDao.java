@@ -1,10 +1,12 @@
 package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.util.Util;
 
+import java.sql.SQLException;
 import java.util.List;
 
-public interface UserDao {
+public interface UserDao  {
     void createUsersTable();
 
     void dropUsersTable();
@@ -13,7 +15,7 @@ public interface UserDao {
 
     void removeUserById(long id);
 
-    List<User> getAllUsers();
+    List<User> getAllUsers() throws SQLException;
 
     void cleanUsersTable();
 }
